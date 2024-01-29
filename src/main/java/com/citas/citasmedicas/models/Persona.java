@@ -1,4 +1,4 @@
-package com.books.booktracker.models;
+package com.citas.citasmedicas.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,7 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "PERSONA")
 public class Persona {
@@ -37,8 +41,8 @@ public class Persona {
     @Column(name = "usuario", length = 50, unique = true, nullable = false)
     private String usuario;
 
-    @Column(name = "contrasena", length = 50, nullable = false)
-    private String contrasena;
+    @Column(name = "contraseña", length = 50, nullable = false)
+    private String contraseña;
 
     // Constructor, getters, setters y otros métodos según sea necesario
 }

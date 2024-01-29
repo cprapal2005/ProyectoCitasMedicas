@@ -1,4 +1,4 @@
-package com.books.booktracker;
+package com.citas.citasmedicas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

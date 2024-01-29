@@ -1,14 +1,14 @@
-package com.books.booktracker.controllers;
+package com.citas.citasmedicas.controllers;
 
-import com.books.booktracker.models.CentroMedico;
-import com.books.booktracker.models.Cita;
-import com.books.booktracker.models.Diagnostico;
-import com.books.booktracker.models.Especializacion;
-import com.books.booktracker.models.Medico;
-import com.books.booktracker.models.MedicoEspecializacion;
-import com.books.booktracker.models.Paciente;
-import com.books.booktracker.models.Persona;
-import com.books.booktracker.services.CitasService;
+import com.citas.citasmedicas.models.CentroMedico;
+import com.citas.citasmedicas.models.Cita;
+import com.citas.citasmedicas.models.Diagnostico;
+import com.citas.citasmedicas.models.Especializacion;
+import com.citas.citasmedicas.models.Medico;
+import com.citas.citasmedicas.models.MedicoEspecializacion;
+import com.citas.citasmedicas.models.Paciente;
+import com.citas.citasmedicas.models.Persona;
+import com.citas.citasmedicas.services.CitasService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

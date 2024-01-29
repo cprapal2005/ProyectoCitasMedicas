@@ -1,21 +1,21 @@
-package com.books.booktracker.services;
+package com.citas.citasmedicas.services;
 
-import com.books.booktracker.models.CentroMedico;
-import com.books.booktracker.models.Cita;
-import com.books.booktracker.models.Diagnostico;
-import com.books.booktracker.models.Especializacion;
-import com.books.booktracker.models.Medico;
-import com.books.booktracker.models.MedicoEspecializacion;
-import com.books.booktracker.models.Paciente;
-import com.books.booktracker.models.Persona;
-import com.books.booktracker.repositories.CentroMedicoRepository;
-import com.books.booktracker.repositories.CitaRepository;
-import com.books.booktracker.repositories.DiagnosticoRepository;
-import com.books.booktracker.repositories.EspecializacionRepository;
-import com.books.booktracker.repositories.MedicoEspecializacionRepository;
-import com.books.booktracker.repositories.MedicoRepository;
-import com.books.booktracker.repositories.PacienteRepository;
-import com.books.booktracker.repositories.PersonaRepository;
+import com.citas.citasmedicas.models.CentroMedico;
+import com.citas.citasmedicas.models.Cita;
+import com.citas.citasmedicas.models.Diagnostico;
+import com.citas.citasmedicas.models.Especializacion;
+import com.citas.citasmedicas.models.Medico;
+import com.citas.citasmedicas.models.MedicoEspecializacion;
+import com.citas.citasmedicas.models.Paciente;
+import com.citas.citasmedicas.models.Persona;
+import com.citas.citasmedicas.repositories.CentroMedicoRepository;
+import com.citas.citasmedicas.repositories.CitaRepository;
+import com.citas.citasmedicas.repositories.DiagnosticoRepository;
+import com.citas.citasmedicas.repositories.EspecializacionRepository;
+import com.citas.citasmedicas.repositories.MedicoEspecializacionRepository;
+import com.citas.citasmedicas.repositories.MedicoRepository;
+import com.citas.citasmedicas.repositories.PacienteRepository;
+import com.citas.citasmedicas.repositories.PersonaRepository;
 
 import org.springframework.stereotype.Service;
 
