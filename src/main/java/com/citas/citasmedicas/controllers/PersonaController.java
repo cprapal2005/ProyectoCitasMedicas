@@ -4,7 +4,7 @@ import com.citas.citasmedicas.models.Persona;
 
 import com.citas.citasmedicas.services.PersonaService;
 
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +24,11 @@ public class PersonaController {
     public Persona addPerson(@RequestBody Persona persona){
         return this.personaService.addPerson(persona);
     } 
+
+    @DeleteMapping("/delete")
+    public void deleteCentroMedico(@RequestBody Long id){
+        this.personaService.deletePerson(id);
+    }
 }
 
 
