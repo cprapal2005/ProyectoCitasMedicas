@@ -49,6 +49,76 @@ public class Diagnostico {
     @JoinColumn(name = "id_cita", referencedColumnName = "id", insertable = false, updatable = false)
     private Cita cita;
 
-    // Constructor, getters, setters y otros métodos según sea necesario
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(Long idMedico) {
+        this.idMedico = idMedico;
+    }
+
+    public Long getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(Long idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public Long getIdCita() {
+        return idCita;
+    }
+
+    public void setIdCita(Long idCita) {
+        this.idCita = idCita;
+    }
+
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public String getReceta() {
+        return receta;
+    }
+
+    public void setReceta(String receta) {
+        this.receta = receta;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public Cita getCita() {
+        return cita;
+    }
+
+    public void setCita(Cita cita) {
+        this.cita = cita;
+    }
 }
 

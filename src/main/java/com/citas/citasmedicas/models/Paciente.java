@@ -40,6 +40,46 @@ public class Paciente {
     @JoinColumn(name = "id_persona", referencedColumnName = "id", insertable = false, updatable = false)
     private Persona persona;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdPersona() {
+        return idPersona;
+    }
+
+    public void setIdPersona(Long idPersona) {
+        this.idPersona = idPersona;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getTarjetaSanitaria() {
+        return tarjetaSanitaria;
+    }
+
+    public void setTarjetaSanitaria(String tarjetaSanitaria) {
+        this.tarjetaSanitaria = tarjetaSanitaria;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
     // Constructor, getters, setters y otros métodos según sea necesario
 }
 
