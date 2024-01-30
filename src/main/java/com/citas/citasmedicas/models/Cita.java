@@ -2,6 +2,7 @@ package com.citas.citasmedicas.models;
 
 import java.util.Date;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -52,7 +53,6 @@ public class Cita {
     @ManyToOne
     @JoinColumn(name = "id_medico", referencedColumnName = "id", insertable = false, updatable = false)
     private Medico medico;
-
     @ManyToOne
     @JoinColumn(name = "id_paciente", referencedColumnName = "id", insertable = false, updatable = false)
     private Paciente paciente;
@@ -61,6 +61,92 @@ public class Cita {
     @JoinColumn(name = "id_centro_medico", referencedColumnName = "id", insertable = false, updatable = false)
     private CentroMedico centroMedico;
 
-    // Constructor, getters, setters y otros métodos según sea necesario
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(Long idMedico) {
+        this.idMedico = idMedico;
+    }
+
+    public Long getIdPaciente() {
+        return idPaciente;
+    }
+
+    public void setIdPaciente(Long idPaciente) {
+        this.idPaciente = idPaciente;
+    }
+
+    public Long getIdCentroMedico() {
+        return idCentroMedico;
+    }
+
+    public void setIdCentroMedico(Long idCentroMedico) {
+        this.idCentroMedico = idCentroMedico;
+    }
+
+    public String getPlanta() {
+        return planta;
+    }
+
+    public void setPlanta(String planta) {
+        this.planta = planta;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Date getHora() {
+        return hora;
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public CentroMedico getCentroMedico() {
+        return centroMedico;
+    }
+
+    public void setCentroMedico(CentroMedico centroMedico) {
+        this.centroMedico = centroMedico;
+    }
 }
 
