@@ -1,10 +1,13 @@
 package com.citas.citasmedicas.controllers;
 
 
+import com.citas.citasmedicas.models.Medico;
 import com.citas.citasmedicas.models.Persona;
 import com.citas.citasmedicas.services.MedicoService;
 import com.citas.citasmedicas.services.PersonaService;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,13 +19,18 @@ public class MedicoController {
 
     private final MedicoService medicoService;
 
-    public MedicoController(PersonaService personaService) {
-        this.personaService = personaService;
+    public MedicoController(MedicoService medicoService) {
+        this.medicoService = medicoService;
     }
 
     @PostMapping("/create")
-    public Persona addPerson(@RequestBody Persona persona){
-        return this.personaService.addPerson(persona);
+    public Medico addMedico(@RequestBody Medico medico){
+        return this.medicoService.addMedico(medico);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteMedicoById(@PathVariable("id") Long id){
+        this.medicoService.deleteMedico(id);
     }
 
 }

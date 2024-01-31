@@ -26,7 +26,7 @@ public class Medico {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_persona", nullable = false)
-    private Long idPersona;
+    private Persona persona;
 
     @ManyToOne
     @JoinColumn(name = "id_centro_medico", referencedColumnName = "id", insertable = false, updatable = false)
