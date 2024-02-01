@@ -19,8 +19,11 @@ public class MedicoController {
 
     private final MedicoService medicoService;
 
-    public MedicoController(MedicoService medicoService) {
+    private final PersonaService personaService;
+
+    public MedicoController(MedicoService medicoService,PersonaService personaService) {
         this.medicoService = medicoService;
+        this.personaService = personaService;
     }
 
     @PostMapping("/create")
@@ -30,7 +33,8 @@ public class MedicoController {
 
     @DeleteMapping("/delete/{id}")
     public void deleteMedicoById(@PathVariable("id") Long id){
-        this.medicoService.deleteMedico(id);
+        Medico medico = medicoService.getMedicoById(id);
+        this.medicoService.deleteMedico(medico.getId());
     }
 
 }
