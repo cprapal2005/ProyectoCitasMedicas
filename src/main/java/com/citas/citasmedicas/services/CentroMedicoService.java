@@ -6,8 +6,10 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.citas.citasmedicas.models.CentroMedico;
+import com.citas.citasmedicas.models.Cita;
 import com.citas.citasmedicas.models.Medico;
 import com.citas.citasmedicas.repositories.CentroMedicoRepository;
+import com.citas.citasmedicas.repositories.CitaRepository;
 import com.citas.citasmedicas.repositories.MedicoRepository;
 
 @Service
@@ -32,7 +34,9 @@ public class CentroMedicoService {
         for (Medico medico : medicos) {
             
             if (medico.getIdCentroMedico()==centro.getId()) {
-                medico.setCentroMedico(centroRepository.findById((long) 1).get());
+                final CentroMedico c = centroRepository.findById((long)1).orElse(null);
+                medico.setCentroMedico(c);
+                medicoRepository.save(medico);
             }
 
         }

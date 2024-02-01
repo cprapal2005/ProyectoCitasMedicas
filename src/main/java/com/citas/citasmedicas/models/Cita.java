@@ -32,7 +32,8 @@ public class Cita {
     @Column(name = "id_paciente", nullable = false)
     private Long idPaciente;
 
-    @Column(name = "id_centro_medico", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_centro_medico", nullable = false)
     private Long idCentroMedico;
 
     @Column(name = "planta", length = 2, nullable = false)
