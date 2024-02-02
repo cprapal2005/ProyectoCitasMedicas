@@ -3,6 +3,8 @@ import com.citas.citasmedicas.models.Medico;
 import com.citas.citasmedicas.repositories.MedicoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MedicoService {
 
@@ -22,6 +24,10 @@ public class MedicoService {
 
     public Medico getMedicoById(Long id){
         return medicoRepository.findById(id).get();
+    }
+
+    public List<Medico> getAllMedicos(){
+        return (List<Medico>) medicoRepository.findAll();
     }
 
 
