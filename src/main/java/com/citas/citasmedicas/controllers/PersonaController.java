@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/persona")
 public class PersonaController {
@@ -28,6 +30,11 @@ public class PersonaController {
     @DeleteMapping("/delete")
     public void deleteCentroMedico(@RequestBody Long id){
         this.personaService.deletePerson(id);
+    }
+
+    @GetMapping("/getAll")
+    public List<Persona> getAllPersonas(){
+        return personaService.getAllPersonas();
     }
 }
 
