@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/persona")
 public class PersonaController {
@@ -36,6 +38,11 @@ public class PersonaController {
     @DeleteMapping("/delete/{id}")
     public void deletePersonByID(@PathVariable("id") Long id){
         personaService.deletePerson(id);
+    }
+
+    @GetMapping("/getAll")
+    public List<Persona> getAllPersonas(){
+        return personaService.getAllPersonas();
     }
 }
 

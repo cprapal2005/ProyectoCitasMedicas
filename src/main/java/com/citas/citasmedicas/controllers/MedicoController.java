@@ -42,4 +42,9 @@ public class MedicoController {
         return medicoService.getAllMedicos();
     }
 
+    @GetMapping("/getMedico{id}")
+    public Medico getMedico(@PathVariable("id") Long id){
+        return medicoService.getMedicoById(id);
+    }
+
 }
