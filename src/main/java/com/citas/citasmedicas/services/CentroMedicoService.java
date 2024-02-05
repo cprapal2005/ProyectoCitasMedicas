@@ -4,23 +4,17 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
-
 import com.citas.citasmedicas.models.CentroMedico;
-import com.citas.citasmedicas.models.Cita;
-import com.citas.citasmedicas.models.Medico;
+import com.citas.citasmedicas.models.Paciente;
 import com.citas.citasmedicas.repositories.CentroMedicoRepository;
-import com.citas.citasmedicas.repositories.CitaRepository;
-import com.citas.citasmedicas.repositories.MedicoRepository;
 
 @Service
 public class CentroMedicoService {
 
     private final CentroMedicoRepository centroRepository;
-    private final MedicoRepository medicoRepository;
 
-    public CentroMedicoService(CentroMedicoRepository centroRepository, MedicoRepository medicoRepository){
+    public CentroMedicoService(CentroMedicoRepository centroRepository){
         this.centroRepository = centroRepository;
-        this.medicoRepository = medicoRepository;
     }
 
     public CentroMedico addCentroMedico(CentroMedico centro){
@@ -28,20 +22,32 @@ public class CentroMedicoService {
     }
 
     public void deleteCentroMedico(Long id){
-        CentroMedico centro = centroRepository.findById(id).orElse(null);
-        Iterable<Medico> medicos = medicoRepository.findAll();
 
-        for (Medico medico : medicos) {
-            
-            if (medico.getIdCentroMedico()==centro.getId()) {
-                final CentroMedico c = centroRepository.findById((long)1).orElse(null);
-                medico.setCentroMedico(c);
-                medicoRepository.save(medico);
-            }
-
+        try {
+            centroRepository.deleteById(id);
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + ": No se puede borrar este centro médico.");
         }
 
-        centroRepository.deleteById(id);
+        
+    }
+
+    public CentroMedico updateCentroMedico(Long id, CentroMedico centro){
+
+        // Verificar si el paciente con el id proporcionado existe
+        Optional<CentroMedico> existingCentro = centroRepository.findById(id);
+
+        if (existingCentro.isPresent()) {
+            // Actualizar los campos relevantes del paciente existente
+            CentroMedico centroMedico = existingCentro.get();
+            centroMedico.setNombre(centro.getNombre());
+            centroMedico.setCiudad(centro.getCiudad());
+            // Guardar el paciente actualizado
+            return centroRepository.save(centroMedico);
+        } else {
+            // El paciente no existe, puedes manejar esto de acuerdo a tus necesidades
+            return null;
+        }
     }
 
     public List<CentroMedico> getCentrosMedicos(){
