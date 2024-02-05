@@ -2,7 +2,6 @@ package com.citas.citasmedicas.controllers;
 
 import com.citas.citasmedicas.models.Cita;
 import com.citas.citasmedicas.services.CitaService;
-import com.citas.citasmedicas.services.DiagnosticoService;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -14,11 +13,9 @@ import java.util.Optional;
 public class CitaController {
 
     private final CitaService citaService;
-    private final DiagnosticoService diagnosticoService;
 
-    public CitaController(CitaService citaService, DiagnosticoService diagnosticoService) {
+    public CitaController(CitaService citaService) {
         this.citaService = citaService;
-        this.diagnosticoService = diagnosticoService;
     }
 
     @PostMapping("/create")

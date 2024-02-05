@@ -15,6 +15,7 @@ public class EspecializacionService {
         this.espRepository = espRepository;
     }
 
+    @SuppressWarnings("null")
     public Especializacion addEspecializacion(Especializacion especializacion){
         return espRepository.save(especializacion);
     }
@@ -23,6 +24,7 @@ public class EspecializacionService {
         return (List<Especializacion>) espRepository.findAll();
     }
 
+    @SuppressWarnings("null")
     public Especializacion getEspecializacionById(Long id){
         return espRepository.findById(id).get();
     }

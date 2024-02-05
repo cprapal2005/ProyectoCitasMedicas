@@ -16,10 +16,12 @@ public class CitaService {
         this.citaRepository = citaRepository;
     }
 
+    @SuppressWarnings("null")
     public Cita addCita(Cita cita) {
         return citaRepository.save(cita);
     }
 
+    @SuppressWarnings("null")
     public Optional<Cita> getCitaById(Long id) {
         return citaRepository.findById(id);
     }
@@ -28,11 +30,13 @@ public class CitaService {
         return (List<Cita>) citaRepository.findAll();
     }
 
+    @SuppressWarnings("null")
     public void deleteCita(Long id) {
         citaRepository.deleteById(id);
     }
 
     public Cita updateCita(Long id, Cita updatedCita) {
+        @SuppressWarnings("null")
         Optional<Cita> existingCita = citaRepository.findById(id);
 
         if (existingCita.isPresent()) {
@@ -50,6 +54,7 @@ public class CitaService {
         }
     }
 
+    @SuppressWarnings("null")
     public void deleteCitasByPacienteId(Long pacienteId) {
         citaRepository.findAll().forEach(cita -> {
             if(cita.getIdPaciente()==pacienteId) citaRepository.deleteById(cita.getId());

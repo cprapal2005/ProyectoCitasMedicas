@@ -1,7 +1,6 @@
 package com.citas.citasmedicas.controllers;
 
 import com.citas.citasmedicas.models.MedicoEspecializacion;
-import com.citas.citasmedicas.repositories.MedicoEspecializacionRepository;
 import com.citas.citasmedicas.services.MedicoEspecializacionService;
 
 import org.springframework.web.bind.annotation.GetMapping;

@@ -13,6 +13,7 @@ public class MedicoEspecializacionService {
 
     private MedicoEspecializacionRepository respository;
 
+    @SuppressWarnings("null")
     public Optional<MedicoEspecializacion> getMedicoEspecializacion(Long id){
         return respository.findById(id);
     }
@@ -21,6 +22,7 @@ public class MedicoEspecializacionService {
         return (List<MedicoEspecializacion>) respository.findAll();
     }
 
+    @SuppressWarnings("null")
     public void deleteMedicoEspecializacion(Long id){
         respository.deleteById(id);
     }
@@ -42,6 +44,7 @@ public class MedicoEspecializacionService {
 
     }
 
+    @SuppressWarnings("null")
     public MedicoEspecializacion create(MedicoEspecializacion medicoEspecializacion){
         return respository.save(medicoEspecializacion);
     }
