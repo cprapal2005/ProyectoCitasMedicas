@@ -2,6 +2,7 @@ package com.citas.citasmedicas.controllers;
 import com.citas.citasmedicas.models.Especializacion;
 import com.citas.citasmedicas.services.EspecializacionService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +26,13 @@ public class EspecializacionController {
     }
 
     @GetMapping("/getAllEspecializaciones")
-    public List<Especializacion> getAllMedicos(){
+    public List<Especializacion> getAllEspecializaciones(){
         return especializacionService.getAllEspecializaciones();
+    }
+
+    @GetMapping("/getEspecializacion/{id}")
+    public Especializacion getEspecializacionById(@PathVariable("id") Long id){
+        return especializacionService.getEspecializacionById(id);
     }
 
 
