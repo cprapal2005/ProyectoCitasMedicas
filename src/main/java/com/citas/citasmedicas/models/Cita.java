@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -50,14 +51,14 @@ public class Cita {
     @Temporal(TemporalType.TIME)
     private Date hora;
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_medico", referencedColumnName = "id", insertable = false, updatable = false)
     private Medico medico;
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_paciente", referencedColumnName = "id", insertable = false, updatable = false)
     private Paciente paciente;
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_centro_medico", referencedColumnName = "id", insertable = false, updatable = false)
     private CentroMedico centroMedico;
 
