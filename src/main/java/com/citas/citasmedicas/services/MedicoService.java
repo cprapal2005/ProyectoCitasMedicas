@@ -1,8 +1,12 @@
 package com.citas.citasmedicas.services;
+import com.citas.citasmedicas.models.Especializacion;
 import com.citas.citasmedicas.models.Medico;
+import com.citas.citasmedicas.models.MedicoEspecializacion;
+import com.citas.citasmedicas.repositories.MedicoEspecializacionRepository;
 import com.citas.citasmedicas.repositories.MedicoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +15,11 @@ public class MedicoService {
 
     private final MedicoRepository medicoRepository;
 
-    public MedicoService(MedicoRepository medicoRepository){
+    private final MedicoEspecializacionRepository medicoEspecializacionRepository;
+
+    public MedicoService(MedicoRepository medicoRepository, MedicoEspecializacionRepository medicoEspecializacionRepository){
         this.medicoRepository = medicoRepository;
+        this.medicoEspecializacionRepository = medicoEspecializacionRepository;
     }
 
     @SuppressWarnings("null")
@@ -48,6 +55,20 @@ public class MedicoService {
         else{
             return null;
         }
+
+    }
+
+    public List<Medico> getMedicosEspecializacion(Especializacion especializacion) {
+       List<MedicoEspecializacion> listaMedicosEspecializacion = (List<MedicoEspecializacion>) medicoEspecializacionRepository.findAll();
+       List<Medico> listaMedicosEspecializados = new ArrayList<Medico>();
+       for (MedicoEspecializacion medicoEspecializacion : listaMedicosEspecializacion){
+            if (medicoEspecializacion.getIdEspecializacion() == especializacion.getId()){
+                Optional<Medico> medico = medicoRepository.findById(medicoEspecializacion.getIdMedico());
+                listaMedicosEspecializados.add(medico.get());
+            }
+       }
+
+       return listaMedicosEspecializados;
 
     }
 
