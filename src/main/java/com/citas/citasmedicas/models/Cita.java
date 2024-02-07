@@ -44,11 +44,11 @@ public class Cita {
 
     @Column(name = "fecha", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date fecha;
+    private String fecha;
 
     @Column(name = "hora", nullable = false)
     @Temporal(TemporalType.TIME)
-    private Date hora;
+    private String hora;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_medico", referencedColumnName = "id", insertable = false, updatable = false)
@@ -109,19 +109,19 @@ public class Cita {
         this.sala = sala;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

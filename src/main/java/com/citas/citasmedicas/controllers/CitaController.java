@@ -23,6 +23,11 @@ public class CitaController {
         return citaService.addCita(cita);
     }
 
+    @PostMapping("/exist")
+    public Boolean existeCita(@RequestBody Cita cita) {
+        return citaService.existeCita(cita);
+    }
+
     @GetMapping("/{id}")
     public Optional<Cita> getCitaById(@PathVariable Long id) {
         return citaService.getCitaById(id);
