@@ -17,10 +17,12 @@ public class PacienteService {
         this.pacienteRepository = pacienteRepository;
     }
 
+    @SuppressWarnings("null")
     public Paciente addPaciente(Paciente paciente){
         return pacienteRepository.save(paciente);
     }
 
+    @SuppressWarnings("null")
     public Optional<Paciente> getPacienteById(Long id){
         return pacienteRepository.findById(id);
     }
@@ -29,6 +31,7 @@ public class PacienteService {
         return (List<Paciente>) pacienteRepository.findAll();
     }
 
+    @SuppressWarnings("null")
     public void deletePaciente(Long id) {
 
         pacienteRepository.deleteById(id);
@@ -36,6 +39,7 @@ public class PacienteService {
 
     public Paciente updatePaciente(Long id, Paciente updatedPaciente){
         // Verificar si el paciente con el id proporcionado existe
+        @SuppressWarnings("null")
         Optional<Paciente> existingPaciente = pacienteRepository.findById(id);
 
         if (existingPaciente.isPresent()) {

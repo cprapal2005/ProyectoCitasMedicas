@@ -9,7 +9,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -33,7 +32,7 @@ public class Cita {
 
     @Column(name = "id_paciente", nullable = false)
     private Long idPaciente;
-
+    
     @Column(name = "id_centro_medico", nullable = false)
     private Long idCentroMedico;
 

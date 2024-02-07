@@ -36,5 +36,45 @@ public class MedicoEspecializacion {
     @JoinColumn(name = "id_especializacion", referencedColumnName = "id", insertable = false, updatable = false)
     private Especializacion especializacion;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdMedico() {
+        return idMedico;
+    }
+
+    public void setIdMedico(Long idMedico) {
+        this.idMedico = idMedico;
+    }
+
+    public Long getIdEspecializacion() {
+        return idEspecializacion;
+    }
+
+    public void setIdEspecializacion(Long idEspecializacion) {
+        this.idEspecializacion = idEspecializacion;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Especializacion getEspecializacion() {
+        return especializacion;
+    }
+
+    public void setEspecializacion(Especializacion especializacion) {
+        this.especializacion = especializacion;
+    }
+
     // Constructor, getters, setters y otros métodos según sea necesario
 }
