@@ -1,6 +1,7 @@
 package com.citas.citasmedicas.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,11 @@ public class CentroMedicoController {
     @PutMapping("/update/{id}")
     public CentroMedico updateCentro(@PathVariable("id") Long id, @RequestBody CentroMedico centro) {
         return this.centroService.updateCentroMedico(id, centro);
+    }
+
+    @GetMapping("/get/{id}")
+    public Optional<CentroMedico> getAllCentroMedico(@PathVariable("id") Long id) {
+        return this.centroService.getCentroMedico(id);
     }
 
     @GetMapping("/all")
