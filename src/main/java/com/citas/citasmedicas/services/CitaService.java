@@ -5,6 +5,7 @@ import com.citas.citasmedicas.repositories.CitaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -52,6 +53,17 @@ public class CitaService {
             // Manejar el caso cuando la cita no existe
             return null;
         }
+    }
+
+    public Boolean existeCita(Cita buscada){
+        Boolean encontrado = false;
+        for (Cita cita: citaRepository.findAll()) {
+            if (cita.getFecha().equals(buscada.getFecha()) &&
+                    cita.getHora().equals(buscada.getHora())) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
     }
 
     @SuppressWarnings("null")
