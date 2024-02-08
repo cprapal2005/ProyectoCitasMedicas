@@ -43,8 +43,8 @@ public class PersonaService {
             persona1.setDni(persona.getDni());
             persona1.setTelf(persona.getTelf());
             persona1.setEmail(persona.getEmail());
-            persona1.setUsuario(persona.getUsuario());
-            persona1.setContraseña(persona.getContraseña());
+            persona1.setUsername(persona.getUsername());
+            persona1.setPassword(persona.getPassword());
             
 
             return personaRepository.save(persona1);
