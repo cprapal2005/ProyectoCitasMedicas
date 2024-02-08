@@ -37,6 +37,13 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:8100")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowCredentials(true);
+
+        registry.addMapping("/centro_medico/all")
+                .allowedOrigins("http://localhost:8100")
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowCredentials(true);
+
+
     }
 }
 
