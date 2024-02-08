@@ -56,4 +56,8 @@ public class CentroMedicoService {
         return (List<CentroMedico>) centroRepository.findAll();
     }
 
+    public Optional<CentroMedico> getCentroMedico(Long id){
+        return  centroRepository.findById(id);
+    }
+
 }
