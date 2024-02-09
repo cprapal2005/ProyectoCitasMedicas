@@ -1,6 +1,8 @@
 package com.citas.citasmedicas.controllers;
 import com.citas.citasmedicas.models.Especializacion;
 import com.citas.citasmedicas.services.EspecializacionService;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,8 +28,8 @@ public class EspecializacionController {
     }
 
     @GetMapping("/getAllEspecializaciones")
-    public List<Especializacion> getAllEspecializaciones(){
-        return especializacionService.getAllEspecializaciones();
+    public ResponseEntity<List<Especializacion>> getAllEspecializaciones(){
+        return ResponseEntity.ok(especializacionService.getAllEspecializaciones());
     }
 
     @GetMapping("/getEspecializacion/{id}")
