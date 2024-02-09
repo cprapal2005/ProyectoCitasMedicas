@@ -33,6 +33,7 @@ public class CitaService {
     }
 
     @SuppressWarnings("null")
+<<<<<<< Updated upstream
     public Cita addCita(Cita cita) throws ResendException {
 
         Long idCentro = cita.getIdCentroMedico();
@@ -54,6 +55,10 @@ public class CitaService {
 
         SendEmailResponse data = resend.emails().send(sendEmailRequest);
 
+=======
+    public Cita addCita(Cita cita) {
+        //
+>>>>>>> Stashed changes
         return citaRepository.save(cita);
     }
 
