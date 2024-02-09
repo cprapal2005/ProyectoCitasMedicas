@@ -1,18 +1,6 @@
 package com.citas.citasmedicas.models;
 
-import java.util.Date;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -57,7 +45,7 @@ public class Cita {
     @JoinColumn(name = "id_paciente", referencedColumnName = "id", insertable = false, updatable = false)
     private Paciente paciente;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_centro_medico", referencedColumnName = "id", insertable = false, updatable = false)
     private CentroMedico centroMedico;
 

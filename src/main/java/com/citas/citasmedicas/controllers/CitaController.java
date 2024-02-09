@@ -3,6 +3,7 @@ package com.citas.citasmedicas.controllers;
 import com.citas.citasmedicas.models.Cita;
 import com.citas.citasmedicas.services.CitaService;
 
+import com.resend.core.exception.ResendException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class CitaController {
     }
 
     @PostMapping("/create")
-    public Cita addCita(@RequestBody Cita cita) {
+    public Cita addCita(@RequestBody Cita cita) throws ResendException {
         return citaService.addCita(cita);
     }
 
