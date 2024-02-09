@@ -32,6 +32,8 @@ public class AuthService {
         String token=jwtService.getToken(user);
         AuthResponse auth = new AuthResponse();
 
+        auth.setPersona(personaRepository.findByUsername(request.getUsername()).orElseThrow());
+
         auth.setToken(jwtService.getToken(user));
 
         return auth;
@@ -53,6 +55,8 @@ public class AuthService {
         personaRepository.save(persona);
 
         AuthResponse auth = new AuthResponse();
+
+        auth.setPersona(persona);
 
         auth.setToken(jwtService.getToken((UserDetails) persona));
 
